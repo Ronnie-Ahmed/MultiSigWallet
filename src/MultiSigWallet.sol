@@ -144,6 +144,10 @@ contract MultiSigWallet {
     function getSignature() external view returns (uint256) {
         return needSignature;
     }
+
+    function getConfirmation(uint256 _txId) external view returns (bool) {
+        return didIconfirm[_txId][msg.sender];
+    }
 }
 
 contract TestContract {
